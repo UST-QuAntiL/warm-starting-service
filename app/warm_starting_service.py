@@ -33,7 +33,7 @@ from app.service_functions.gw_algorithm import best_gw_cuts
 
 # Classically approximating a graphs Maximum cut
 def compute_initial_state_maxcut(request: InitialStateMaxCutRequest):
-    if request.classical_algorithm == "gw":
+    if request.classical_algorithm in ["gw", "goemans-williamson"]:
         string, value = best_gw_cuts(request.graph, request.repetitions)
         return InitialStateMaxCutResponse(string, value)
     else:
