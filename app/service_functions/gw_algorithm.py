@@ -24,7 +24,7 @@ import numpy as np
 
 def best_gw_cuts(graph, n_GW_cuts, rounded=False):
     np_graph_array = np.array(graph)
-    nx_graph = nx.from_numpy_matrix(np_graph_array)
+    nx_graph = nx.from_numpy_array(np_graph_array)
 
     gw_cuts = []
     for i in range(n_GW_cuts):
